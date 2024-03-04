@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% block title %} Rent Cars {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+<div class="container mt-4">
+    <div>
+      <h1 class="display-4"> Online Car Rental website</h1>
+      <p class="lead">You can select from the wide range of Cars availabe.</p>
+      <h5 style="color:red">Importent guidelines!</h5>
+      <p style="color:blue">Eligibility criteria for car rental?</p>
+      <p>The basic criterion for availing of a car rental service is that you need 
+        to be 21 years old or above and have a valid license for four-wheelers. 
+        You also need to have an ID and address proof, which has to be submitted to 
+        the company while taking the car rental service. You will need to submit the 
+        original license, and not one printed on an A4 size paper.</p>
+      <hr class="my-4">
+    </div>
+       <!-- ======= Features Section ======= -->
+       <section id="features" class="features">
+        <div class="container" data-aos="fade-up">
+  <h2>We <span>care</span> for you</h2>
+  <h6>Our main principle is to support you before, during and after the rental</h6>
+  <br><br>
+          <div class="row">
+            <div class="image col-lg-6"  data-aos="fade-right"><img src="/media/care.jpg"></div>
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+              <div class="icon-box mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
+                <i class="bx bx-receipt"></i>
+                <h5>Multi-language support</h5>
+                <p>We are ready to assist you with any questions in different languages.</p>
+              </div>
+              <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+                <i class="bx bx-cube-alt"></i>
+                <h5>Over 20,000 locations</h5>
+                <p>We compare car rental offers in 20,000 airport and city locations in 180+ countries.</p>
+              </div>
+              <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+                <i class="bx bx-images"></i>
+                <h5>Team of professionals</h5>
+                <p> We are passionate about providing excellent service and exceeding customer expectations.</p>
+              </div>
+             
+            </div>
+          </div>
+  
+        </div>
+      </section><!-- End Features Section -->
+    <div class="row mt-4">
+{% for car in cars %}
+      <div class="col-sm-4 mt-4">
+        <div class="card" style="width: 20rem; height: 24rem;">
+          <img class="card-img-top" src="/media/{{car.image}}" alt="Card image cap" height="260px">
+          <div class="card-body">
+            <h5 class="card-title">Car Name: {{car.name}}</h5>
+            <h6 class="card-text">Car Dealer: <b>{{car.car_dealer}}</b></h6>
+            <p class="card-text">Rent: ₹{{car.rent}} per day</p>
+            <a href="/customer_login/" class="btn btn-primary">Login to Rent </a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <br>
+
+  
+  <br>
+  <br>
+  <div class="main">
+    <div class="one">
+  <h2>Contect:</h2>
+  Mob: 7235927730,
+  </div>
+  
+  <div class="one">
+    <h2>Email:</h2>
+    nand86363@gmail.com
+   </div>
+  
+  
+   <div class="one">
+    <h2>Address:</h2>
+   Ramanthapur Hyderabad.
+   </div>
+  
+  </div>
+{% endblock %}
+
